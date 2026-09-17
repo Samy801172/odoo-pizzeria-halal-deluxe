@@ -1,7 +1,7 @@
 # Pizza Halal Deluxe — Odoo 18 Module
 
 Custom Odoo module for restaurant table and order management.  
-Complementary ERP project to the [Kiwi Club TFE](https://github.com/Samy801172/Kiwi_Club_Web_Flutter) (Angular / NestJS / PostgreSQL).
+Complementary ERP project to the https://github.com/Samy801172/Stage_TFE_2025_Lemkadem_Abdeljalil (Angular / NestJS / PostgreSQL).
 
 **Author:** Abdeljalil Lemkadem  
 **Stack:** Odoo 18 · Python · XML · PostgreSQL · Docker Compose
