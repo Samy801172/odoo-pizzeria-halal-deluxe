@@ -7,13 +7,7 @@ Complementary ERP project to the [Kiwi Club TFE](https://github.com/Samy801172/K
 **Stack:** Odoo 18 · Python · XML · PostgreSQL · Docker Compose
 
 ---
-## Screenshots
 
-### Sales → Tables
-![Odoo — gestion des tables](./docs/odoo-tables.png)
-
-### Sales → Commandes
-![Odoo — commandes restaurant](./docs/odoo-commandes.png)
 ## Features
 
 | Model | Description |
