@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Vues pour les COMMANDES restaurant (pizzeria.order).
+    Modèle lié : models/order.py
+-->
+<odoo>
+
+    <!-- VUE LISTE -->
+    <record id="view_pizzeria_order_list" model="ir.ui.view">
+        <field name="name">pizzeria.order.list</field>
+        <field name="model">pizzeria.order</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="table_id"/>
+                <field name="date"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- VUE FORMULAIRE -->
+    <record id="view_pizzeria_order_form" model="ir.ui.view">
+        <field name="name">pizzeria.order.form</field>
+        <field name="model">pizzeria.order</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="table_id"/>
+                        <field name="date"/>
+                        <field name="state"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- ACTION -->
+    <record id="action_pizzeria_order" model="ir.actions.act_window">
+        <field name="name">Commandes</field>
+        <field name="res_model">pizzeria.order</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- MENU sous Sales -->
+    <menuitem id="menu_pizzeria_order"
+              name="Commandes"
+              parent="sale.sale_menu_root"
+              action="action_pizzeria_order"
+              sequence="51"/>
+
+</odoo>

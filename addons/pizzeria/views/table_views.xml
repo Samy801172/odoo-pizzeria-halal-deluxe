@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Vues pour les TABLES PHYSIQUES du restaurant (Table 1, Table 2…).
+    Ce n'est PAS la table SQL PostgreSQL : ici on décrit les ÉCRANS Odoo.
+    Modèle lié : pizzeria.table (défini dans models/table.py).
+-->
+<odoo>
+
+    <!-- ================================================================
+         BLOC 1 — VUE LISTE : toutes les tables du restaurant en lignes
+         Exemple à l'écran : Table 1 | 4 places | Libre
+         ================================================================ -->
+    <record id="view_pizzeria_table_list" model="ir.ui.view">
+        <!-- id = identifiant unique de cette vue dans le module pizzeria -->
+        <field name="name">pizzeria.table.list</field>
+        <!-- name = nom technique de la vue (comme sale.order.form) -->
+        <field name="model">pizzeria.table</field>
+        <!-- model = quel modèle Python afficher (nos tables physiques) -->
+        <field name="arch" type="xml">
+            <!-- arch = l'architecture visuelle de l'écran -->
+            <list>
+                <!-- list = vue en liste (comme Quotations dans Sales) -->
+                <field name="name"/>
+                <!-- numéro de table : "Table 1", "Table 2"… (fields.Char dans table.py) -->
+                <field name="seats"/>
+                <!-- nombre de places : 2, 4, 6… (fields.Integer) -->
+                <field name="state"/>
+                <!-- état : Libre / Occupée / Réservée (fields.Selection) -->
+            </list>
+        </field>
+    </record>
+
+    <!-- ================================================================
+         BLOC 2 — VUE FORMULAIRE : fiche d'UNE table (clic sur une ligne)
+         ================================================================ -->
+    <record id="view_pizzeria_table_form" model="ir.ui.view">
+        <field name="name">pizzeria.table.form</field>
+        <field name="model">pizzeria.table</field>
+        <field name="arch" type="xml">
+            <form>
+                <!-- form = écran fiche (comme S00007 ou fiche client) -->
+                <sheet>
+                    <!-- sheet = zone blanche centrale (convention Odoo) -->
+                    <group>
+                        <!-- group = regroupe les champs sur la fiche -->
+                        <field name="name"/>
+                        <field name="seats"/>
+                        <field name="state"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- ================================================================
+         BLOC 3 — ACTION : "ouvrir la liste des tables"
+         Invisible pour l'utilisateur ; déclenchée par le menu (bloc 4)
+         ================================================================ -->
+    <record id="action_pizzeria_table" model="ir.actions.act_window">
+        <!-- act_window = action qui ouvre une fenêtre sur un modèle -->
+        <field name="name">Tables</field>
+        <!-- titre affiché en haut de l'écran -->
+        <field name="res_model">pizzeria.table</field>
+        <!-- sur quel modèle ouvrir : nos tables physiques -->
+        <field name="view_mode">list,form</field>
+        <!-- list puis form : liste d'abord, fiche au clic sur une ligne -->
+    </record>
+
+    <!-- ================================================================
+         BLOC 4 — MENU : lien "Tables" sous Sales
+         Clic utilisateur → action (bloc 3) → vue liste (bloc 1)
+         ================================================================ -->
+    <menuitem id="menu_pizzeria_table"
+              name="Tables"
+              parent="sale.sale_menu_root"
+              action="action_pizzeria_table"
+              sequence="50"/>
+    <!-- name = texte du menu | parent = sous le menu Sales -->
+    <!-- action = référence au bloc 3 | sequence = position (50 = assez bas) -->
+
+</odoo>
