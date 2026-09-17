@@ -5,6 +5,17 @@ Complementary ERP project to the [Kiwi Club TFE](https://github.com/Samy801172/K
 
 **Author:** Abdeljalil Lemkadem  
 **Stack:** Odoo 18 · Python · XML · PostgreSQL · Docker Compose
+---
+
+## Captures d'écran
+
+### Ventes → Tables
+![Odoo — gestion des tables](./odoo-tables.png)
+
+### Ventes → Commandes
+![Odoo — commandes restaurant](./odoo-commandes.png)
+
+---
 
 ---
 
