@@ -84,8 +84,7 @@ SELECT id, name, table_id, state FROM pizzeria_order;
 
 ## Related projects
 
-- [Kiwi Club Web Flutter](https://github.com/Samy801172/Kiwi_Club_Web_Flutter)
-- [Backend TFE](https://github.com/Samy801172/BACKEND_TFE_LEMKADEM)
+https://github.com/Samy801172/Stage_TFE_2025_Lemkadem_Abdeljalil 
 
 ---
 
